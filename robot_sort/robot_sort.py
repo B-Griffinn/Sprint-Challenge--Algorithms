@@ -95,51 +95,7 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
-        """
-        PLAN
-
-        while we can move right:
-            move right
-            compare_items if result == 1:
-                swap items
-                move right
-            else:
-                move right
-        """
-        # set the robots light on to begin sort
-        self.set_light_on()
-
-        # loop through list while the light is one
-        while self.light_is_on():
-
-            # set the light off in outter while loop
-            self.set_light_off()
-
-            # while the robot can move right lets swap the current item with the next item in list
-            while self.can_move_right():
-
-                # swap item and then move right
-                self.swap_item()
-                self.move_right()
-
-                # if held item > next item swap items andturn the light on bc sorted
-                if self.compare_item() == 1:
-                    self.swap_item()
-                    # turn light on bc sorted
-                    self.set_light_on()
-                    # move left in order to swap items correctly
-                    self.move_left()
-                    # swap items again
-                    self.swap_item()
-                    # continue moving right thru arr
-                    self.move_right()
-                elif self.compare_item() <= 0:
-                    self.move_left()
-                    self.swap_item()
-                    self.move_right()
-
-            while self.can_move_left():
-                self.move_left()
+        pass
 
 
 if __name__ == "__main__":
@@ -153,3 +109,50 @@ if __name__ == "__main__":
 
     robot.sort()
     print(robot._list)
+
+    # def sort(self):
+    #     """
+    #     PLAN
+
+    #     while we can move right:
+    #         move right
+    #         compare_items if result == 1:
+    #             swap items
+    #             move right
+    #         else:
+    #             move right
+    #     """
+    #     # set the robots light on to begin sort
+    #     self.set_light_on()
+
+    #     # loop through list while the light is one
+    #     while self.light_is_on():
+
+    #         # set the light off in outter while loop
+    #         self.set_light_off()
+
+    #         # while the robot can move right lets swap the current item with the next item in list
+    #         while self.can_move_right():
+
+    #             # swap item and then move right
+    #             self.swap_item()
+    #             self.move_right()
+
+    #             # if held item > next item swap items andturn the light on bc sorted
+    #             if self.compare_item() == 1:
+    #                 self.swap_item()
+    #                 # turn light on bc sorted
+    #                 self.set_light_on()
+    #                 # move left in order to swap items correctly
+    #                 self.move_left()
+    #                 # swap items again
+    #                 self.swap_item()
+    #                 # continue moving right thru arr
+    #                 self.move_right()
+    #             elif self.compare_item() <= 0:
+    #                 self.move_left()
+    #                 self.swap_item()
+    #                 self.move_right()
+
+    #         while self.can_move_left():
+    #             self.move_left()

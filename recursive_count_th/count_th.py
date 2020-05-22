@@ -15,7 +15,7 @@ def count_th(word):
     # update count by 1 if the first two indecies == `th`
     # use the slice method to check 0 index up to 1st index (inclusive)
     if word[:2] == 'th':
-        count = 1
+        count += 1
     else:
         count = 0
     # recursing through the string strting at the first index aka next index each time will then allow us to use the slice method above properly
